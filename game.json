@@ -58,196 +58,458 @@
       }
     ],
     "rooms": {
+      
       "START": {
-        "name": "woods",
-        "desc": "Your car billows thick smoke behind you. You are surrounded by woods on your left and right. There is a path leading to your north. ",
+        "name": "In the car",
+        "desc":"you wake up against your steering wheel. Your head is aching bad and you can't seem to remember what lead to your crash. When you look around you though, you wonder if you're actually the lucky one. Cars are piled up in the road, some abandoned and others crashed. You can't see anyone around for miles. Infront of you on the interstate are the suburbs just outdide the city limits. Behind you lies the city itself you remember that you live there, but you can't understand why you would have been driving to the suburbs. Do you continue twords the suburbs, go back to the city, or look through your car?",
         "exits": [
           {
-            "verb": "NORTH",
-            "target": "FOH",
+            "verb": "",
+            "target": "",
             "condition": ""
           },
           {
-            "verb": "SOUTH",
-            "target": "CAR",
+            "verb": "",
+            "target": "",
+            "condition": ""
+          }
+        ],
+        "inventory":[]
+      },
+      "CITY": {
+        "name": "into the city",
+        "desc": "You begin your treck into the city where it lies just behind you. From what the highway sign tells you, the heart of the city is only a few miles ahead. After the crash, your mind is a bit fuzy, but you remember you were driving out of the city; you can't remember why. It takes you almost two hours, but you eventually make it in. The city looks to be deserted. the streets are just the same, but signs are smashed, lights blown, stores windows are smashed in. The power appears to be out and a riot must have taken place. You really wish you could remember what happened here. You see a convenience store's window smashed in, but down the street you can also see the main square. Where would you like to go?",
+        "exits": [
+          {
+            "verb": "convenience store",
+            "target": "",
             "condition": ""
           },
           {
-            "verb": "WEST",
-            "target": "WDS",
-            "condition": ""
-          },
-          {
-            "verb": "EAST",
-            "target": "WDS",
+            "verb": "main square",
+            "target": "",
             "condition": ""
           }
         ],
         "inventory": []
       },
-      "FOH": {
-        "name": "front of the mysterious house",
-        "desc": "You walk down the path to see a large old house. The porch seems to decay as you scan your eyes over it. The door is half open, but you can't hear anything from inside.",
+      "CONVENIENCE": {
+        "name": "Inside the convenience store",
+        "desc": "You crouch down through the shards of glass that still sit stuck in the windowframe. The glass under your feet crunch and break the overwhelming silence. The shelves are ransacked, only a few sparse cans on some of the shelves and frozen goods that have already started to thaw and go bad. Then, from a distance you hear a noise. Sitting on the checkout counter is an old batery radio. It's shockingly one of the few things still unbroken. You here the voice on the radio say 'This is an emergency broadcast. Due to an unidentifiable viral outbreak, we advise all citizens to evacuate to their designated safehouses until further notice. This has been a public service announcement.' Your body is washed over with dread and fear. What could this mean? You don't understand what happned. If what it says is true, you shouldn't stay out here in the open where you're vonerable for much longer. You consider raiding what is left on the shelves or maybe check behind the counter of the register. What would you like to do?",
         "exits": [
           {
-            "verb": "NORTH",
-            "target": "ENT",
+            "verb": "check shelves",
+            "target": "SHELVES",
             "condition": ""
           },
           {
-            "verb": "BACK",
-            "target": "START",
+            "verb": "check behind counter",
+            "target": "COUNTER",
             "condition": ""
           }
         ],
         "inventory": []
       },
-      "CAR": {
-        "name":"front of the car",
-        "desc":"Yep, not gonna be driving that anytime soon.",
+      "SHELVES": {
+        "name":"convenience store shelves",
+        "desc":"You duck and weave through the rows of empty shelves. You scope out a few unbroken bags of snacks and shove a few safe bags of cheetos into your pockets. As you eye up an umbrella you found as a viable weapon, something metalic gliters in the corner of your eye under the fluorescent lights and catches your attention. Laying amongst the debris on the ground is a strange necklace that looks like a spiral-like triangle. The chain is broken, you imagine that's how the owner must have lost it, but it is otherwise fine. Should you take it or leave it?",
         "exits":
         [
           {
-            "verb": "BACK",
+            "verb": "take it",
+            "target": "CONVENIENCE ATTACK",
+            "condition": ""
+          },
+          {
+            "verb": "leave it",
+            "target": "CONVENIENCE ATTACK",
+            "condition": ""
+          }
+        ],
+        "inventory":[]
+      },
+      "COUNTER": {
+        "name":"Behind the convenience store counter",
+        "desc":"You heave yourself up and over the counter. The register has already been broken open and all the money taken, really you didn't expect any less, but besides that you're surprised by how litte there really is. You crouch down under the counter in a vain attempt to find anything of worth when you see a small handgun in a small hidden pocket along the wall of the counter. Huh, must be a rougher neighborhood than you realized. You open the revolver and see that there's only one bullet in the chamber. It's not much, but it might be worth something. Should you take it?",
+        "exits":
+        [
+          {
+            "verb": "take it",
+            "target": "CONVENIENCE ATTACK",
+            "condition": ""
+          },
+          {
+            "verb": "leave it",
+            "target": "CONVENIENCE ATTACK",
+            "condition": ""
+          }
+        ],
+        "inventory":[]
+      },
+      "CONVENIENCE ATTACK": {
+        "name":"Inside the convenience store",
+        "desc":"Your head shoots up as you hear a lound bang near the back of the store. There is a perturbed groan and grumble followed by someone stepping through the fallen debris in the store. The woman that stumbles in looks worse for wear. Her clothes are tattered and her skin is dirty. You can't quite tell if her hair is hair or a bird's nest and- oh god is that blood on her?! When she raises her head, you're nervousness from finally seeing someone turns to pure dread. She looks dazed, her mouth is coated in blood. The broadcast said viral outbreak, does this mean- is she a zombie?! What are you going to do?",
+        "exits":
+        [
+          {
+            "verb": "shoot", 
+            "target": "KILL ZOMBIE",
+            "condition": ""
+          },
+          {
+            "verb": "run",
+            "target": "SQUARE3",
+            "condition": ""
+          },
+          {
+            "verb": "fight",
+            "target": "FIGHT",
+            "condition": ""
+          }
+
+        ],
+        "inventory":[]
+      },
+      "FIGHT": {
+        "name":"Inside the convenience store",
+        "desc":"You are not equiped to fight, but you've never been one to run. You grab the nearest magazine wrack and throw it down on the ground to trip up the dead woman coming after you. She manages to grab hold of your jacket and pull you back twoards her, man is her grip shockingly strong, but you pick up the stray beer bottle on the ground and swing it at her head. Luckily she's begun the rotting process enough that it knocks her head clean off her shoulders. She slumps to the ground completely lifeless. After all of that, maybe you should leave.",
+        "exits":
+        [
+          {
+            "verb": "leave", 
+            "target": "SQUARE3",
+            "condition": ""
+          }
+
+        ],
+        "inventory":[]
+      },
+      "KILL ZOMBIE": {
+        "name":"Inside the convenience store",
+        "desc":"You whip out the gun you found and aim it at the undead woman's head. With a decently aimed shot, you put a bullet in her head off center in her head, but good enough to kill. Unfortunately you forget that she's undead. She looks badly damaged but not dead. You use the gun itself to knock her head clean off to finish the job. After all of that, maybe you should leave. ",
+        "exits":
+        [
+          {
+            "verb": "leave",
+            "target": "SQUARE3",
+            "condition": ""
+          }
+
+        ],
+        "inventory":[]
+      },
+      "SQUARE": {
+        "name":"main square",
+        "desc":"You decide to continue down the road to the main square. You've yet to run into another human being, but you know people will be there, they have to. As you get closer though, you hear one of the large jumbo screens above the plaza saying something. 'This is an emergency broadcast. Due to an unidentifiable viral outbreak, we advise all citizens to stay inside their homes until further notice. This has been a public service announcement.' A viral break out? You don't understand exactly what that might mean, but that could explain the state of things. If people were getting terribly sick, riots may occur. That being said, you feel like it's probably not safe for you to be out in the open like this. Two things catch your eye. One is a large metal gate blocking off an old alley you know you've never seen before as well as a staircase access to the subway underground. You also consider going back to the convenience store. Which would you like to explore?",
+        "exits":
+        [
+          {
+            "verb": "gate",
+            "target": "GATE",
+            "condition": ""
+          },
+          {
+            "verb": "subway",
+            "target": "SUBWAY",
+            "condition": ""
+          },
+          {
+            "verb": "convenience store",
+            "target": "CONVENIENCE",
+            "condition": ""
+          }
+
+        ],
+        "inventory":[]
+      },
+      "SUBWAY": {
+        "name":"underground subway",
+        "desc":"Just like everything else, it's deserted. You're starting to get anxious; there's no sign of people anywhere and you still know so little about this whole breakout. The only lights still functioning are the emergency lights, but even those are flickering like they may leave you alone too. You can hear wind from inside the tubes, but no trains are coming, you don't think they ever will. You think you can hear something coming from down the path on the tracks. Do you investigate it or turn back?",
+        "exits":
+        [
+          {
+            "verb": "investigate",
+            "target": "ZOMBIE HOARD",
+            "condition": ""
+          },
+          {
+            "verb": "turn back",
+            "target": "SQUARE2",
+            "condition": ""
+          }
+
+        ],
+        "inventory":[]
+      },
+      "SQUARE2": {
+        "name":"main square",
+        "desc":"The town square is just as you left it. The Large TV is still playing the same unsettling PSA warning all people to remain indoors. You can go to the strage gate, go underground into the subway, or go back to the convenience store.",
+        "exits":
+        [
+          {
+            "verb": "gate",
+            "target": "GATE",
+            "condition": ""
+          },
+          {
+            "verb": "subway",
+            "target": "SUBWAY",
+            "condition": ""
+          },
+          {
+            "verb": "convenience store",
+            "target": "CONVENIENCE2",
+            "condition": ""
+          }
+
+        ],
+        "inventory":[]
+      },
+      "ZOMBIE HOARD": {
+        "name":"on the subway tracks",
+        "desc":"It's almost impossible to see in here. There are faint lights that guide the path of the tunnel, maybe one small light every thirty feet, but it's faint. You know you heard something. At the time, your desperate mind hoped it was other survivors, people who could help you, but now you are begining to think what ever is down here might not be safe. Just as you consider your danger, you hear it: feet shuffling on the ground. You consider calling out, but in the faint light, you see a figure ambling closer to you. There are more behind it. They do not speak. They only cry out in strange tones. You're frozen in fear. At once you make a break for it back to where you came from, but it's too late. They hear you and suddenly those wabling steps are far more confedent as a whole swarm of bodies close in on you. You're heditant to think of them as human. You could try and fight back, but it's fuetile, they overwhelm you before you can try and your death is fast. Try again?",
+        "exits":
+        [
+          {
+            "verb": "restart",
             "target": "START",
             "condition": ""
-          },
-          {
-            "verb": "DRIVE",
-            "target": "END",
-            "condition": ""
           }
         ],
         "inventory":[]
       },
-      "WDS": {
-        "name":"Woods",
-        "desc":"You are surrounded by lots of trees. There's not much you can make out through the darkness.",
+      "SQUARE3": {
+        "name":"main square",
+        "desc":"After that run in with the undead woman, you're starting to have a few ideas about what's happening here, but you're far too frazzled to know what to do with this new and still limited information. All that matters though is that you've made it to safety; she doesn't seem to be following you. The large jumbo screen is playing a similar PSA as what you heard in the store, but still you don't see anyone around. Two things catch your eye. One is a large metal gate blocking off an old alley you know you've never seen before as well as a staircase access to the subway underground. You also consider going back to the convenience store. Which would you like to explore?",
         "exits":
         [
           {
-            "verb": "BACK",
-            "target": "START",
-            "condition": ""
-          }
-        ],
-        "inventory":[]
-      },
-      "ENT": {
-        "name":"entryway",
-        "desc":"You step into the entryway and look around. There are stairs to the north of you that lead to a dark upstairs area. To your right there's a long hallway with a few open doors.",
-        "exits":
-        [
-          {
-            "verb": "NORTH",
-            "target": "UPS",
+            "verb": "subway",
+            "target": "SUBWAY",
             "condition": ""
           },
           {
-            "verb": "EAST",
-            "target": "HA1",
+            "verb": "gate",
+            "target": "GATE",
             "condition": ""
           },
           {
-            "verb": "BACK",
-            "target": "FOH",
+            "verb": "convenience store",
+            "target": "CONVENIENCE2",
             "condition": ""
           }
-
         ],
         "inventory":[]
       },
-      "UPS": {
-        "name":"upstairs",
-        "desc":"The upstairs ceilings are so low you have to duck your head. It smells deeply of mold and mothballs. From your spot at the top of the stairs you can see a large window to your north and a door to your west with a large number of chains on it.",
+      "CONVENIENCE2": {
+        "name":"convenience store",
+        "desc":"You go back to the convenience store and climb through the broken glass in the window frame. The glass crunches solidly below you, you hear the radio playing the PSA, but it seems safe otherwise. You're starting to get worried about finding decent supplies to keep yourself alive. Do you look for supplise or leave?",
         "exits":
         [
           {
-            "verb": "WEST",
-            "target": "CHA",
+            "verb":"look for supplise",
+            "target":"SHELVES2",
+            "condition": ""
+          }
+        ],
+        "inventory":[]
+      },
+      "SHELVES2": {  
+        "name": "convenience store shelves",
+        "desc": "You try and scrap together what you can of what is leftover in this ransacked convenience store. There are a few food items that you think have survived well enough. You also were eyeing those neat shades when something caught your attention from the corner of your eye. The metalic glint of a necklace that lay in the mess of debris on the ground. The chain is broken, you assume that's why it's hear, but otherwise the strage spirtal like triangle pendant remains the same. You have what you want, do you take it and go back to the city square or leave it?",
+        "exits":
+        [
+          {
+            "verb":"take it",
+            "target": "SQUARE2",
             "condition": ""
           },
           {
-            "verb": "NORTH",
-            "target": "WND",
+            "verb": "leave it",
+            "target": "SQUARE2",
             "condition": ""
+          }
+        ],
+        "inventory":[]
+      },
+      "GATE": {
+        "name": "strange gate",
+        "desc":"You walk up to the gate. It's strange metal design isn't something you recognize ever being around the city. It looks like metal vines growning around the prongs flowering into small roses. On the gate where a lock should be is a small hole. You wonder what it does. Poking it with your finger sure doesn't do anything.",
+        "exits":
+        [
+          {
+            "verb":"use necklace",
+            "target":"",
+            "condition":""
           },
           {
-            "verb": "BACK",
-            "target": "ENT",
-            "condition": ""
+            "verb": "leave",
+            "target": "SQUARE2",
+            "condition":""
           }
-
-
-
         ],
         "inventory":[]
       },
-      "HA1": {
-        "name":"hallway",
-        "desc":"The hallway is long and narrow, but most of the doors have locks on them. A painting hung on the wall has been half torn down. The north of the hallway has a single door that's unlocked.",
+      "CAMP": {
+        "name": "Secret survivor camp",
+        "desc":"You placed the necklace pendant into the hole and a lock mechanism made a loud clunk before the door swong open. You take the necklace back out of the door not wanting to lose what seems to be your newest neat trick. Now that you're inside the alley way, there are sounds coming from the distance. This time, you feel comforted by the noise. It's the unmistakeable sounds of soft chatter of people. When you reach the end of the alley, you are in a small clearing full of what looks like refugees. They encorage you to sit down while they explain what has happened. They tell you about the undead that have been popping up, about how they have managed to create some sebalance of safety. The necklace you found was meant for only their elite group, but since you managed to make it, they deemed you worthy to stay. You have survived the end of the world.",
         "exits":
         [
           {
-            "verb": "BACK",
-            "target": "ENT",
-            "condition": ""
+            "verb":"",
+            "target":"",
+            "condition":""
           },
           {
-            "verb": "NORTH",
-            "target": "BAL",
-            "condition": ""
+            "verb": "",
+            "target": "",
+            "condition":""
           }
-
         ],
         "inventory":[]
       },
-      "BAL": {
-        "name":"ballroom",
-        "desc":"You walk inside a huge spacious room with pretty furnishings that have aged quite a bit. You can faintly hear the music that used to be performed here. A dusty piano lurks in the corner.",
+      "LOCATION": {
+        "name": "",
+        "desc":"",
         "exits":
         [
           {
-            "verb": "BACK",
-            "target": "HA1",
-            "condition": ""
+            "verb":"",
+            "target":"",
+            "condition":""
+          },
+          {
+            "verb": "",
+            "target": "",
+            "condition":""
           }
         ],
         "inventory":[]
-      },
-      "CHA": {
-        "name":"front of the chained door",
-        "desc":"Upon closer inspection, the chains are weirdly new looking. The shiny metal looks so different to the rest of the house. The chains look very sturdy. They won't be coming off easily.",
+      },      
+      "LOCATION": {
+        "name": "",
+        "desc":"",
         "exits":
         [
           {
-            "verb": "BACK",
-            "target": "UPS",
-            "condition": ""
+            "verb":"",
+            "target":"",
+            "condition":""
+          },
+          {
+            "verb": "",
+            "target": "",
+            "condition":""
           }
         ],
         "inventory":[]
-      },
-      "WND": {
-        "name":"window",
-        "desc":"The top pane of the window is cracked so you had to peer out the bottom. Theres a large backyard with a swingset visible in the back of the house. The left swingset swings a bit because of the wind..?",
+      },"LOCATION": {
+        "name": "",
+        "desc":"",
         "exits":
         [
           {
-            "verb": "BACK",
-            "target": "UPS",
-            "condition": ""
+            "verb":"",
+            "target":"",
+            "condition":""
+          },
+          {
+            "verb": "",
+            "target": "",
+            "condition":""
           }
         ],
         "inventory":[]
       },
-      "END": {
-        "name":"END",
-        "desc":"END",
+      "LOCATION": {
+        "name": "",
+        "desc":"",
         "exits":
         [
+          {
+            "verb":"",
+            "target":"",
+            "condition":""
+          },
+          {
+            "verb": "",
+            "target": "",
+            "condition":""
+          }
+        ],
+        "inventory":[]
+      },
+      "LOCATION": {
+        "name": "",
+        "desc":"",
+        "exits":
+        [
+          {
+            "verb":"",
+            "target":"",
+            "condition":""
+          },
+          {
+            "verb": "",
+            "target": "",
+            "condition":""
+          }
+        ],
+        "inventory":[]
+      },
+      "LOCATION": {
+        "name": "",
+        "desc":"",
+        "exits":
+        [
+          {
+            "verb":"",
+            "target":"",
+            "condition":""
+          },
+          {
+            "verb": "",
+            "target": "",
+            "condition":""
+          }
+        ],
+        "inventory":[]
+      },
+      "LOCATION": {
+        "name": "",
+        "desc":"",
+        "exits":
+        [
+          {
+            "verb":"",
+            "target":"",
+            "condition":""
+          },
+          {
+            "verb": "",
+            "target": "",
+            "condition":""
+          }
+        ],
+        "inventory":[]
+      },
+      "LOCATION": {
+        "name": "",
+        "desc":"",
+        "exits":
+        [
+          {
+            "verb":"",
+            "target":"",
+            "condition":""
+          },
+          {
+            "verb": "",
+            "target": "",
+            "condition":""
+          }
         ],
         "inventory":[]
       }
     }
-  }
+}
