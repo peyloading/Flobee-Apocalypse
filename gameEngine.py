@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 
 
-print('Your car was making a funny noise so you pulled over. Upon further inspection of the engine, it blows up in your face. Hahaha. ')
+print('In the year 2012, the world was supposed to end. What if it had?')
 # Game loop functions
 def render(game,current,moves,points):
     ''' Displays the current room, moves, and points '''
