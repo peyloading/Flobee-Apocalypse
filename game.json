@@ -527,7 +527,7 @@
         "condition": ""
       }
     ],
-    "inventory": ["Flashlight", "first aid kit"]
+    "inventory": ["Flashlight", "First Aid Kit"]
   },
   "LEAVE": {
     "name":"You decided to leave",
@@ -545,7 +545,7 @@
         "condition": ""
       }
     ],
-    "inventory":["tool box"]
+    "inventory":["Tool Box", "First Aid kit"]
   },
   "STAY": {
     "name":"You decided to stay",
